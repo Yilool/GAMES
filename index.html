@@ -219,12 +219,7 @@ function collectmedal (player, medal)
     scoreText.setText('Score: ' + score);
 
     if (medals.countActive(true) === 0)
-    {
-            
-        //  Add and update the level
-        level += 1;
-        levelText.setText('Level: ' + level);
-        
+    { 
         //  A new batch of stars to collect
         medals.children.iterate(function (child) {
 
@@ -239,6 +234,10 @@ function collectmedal (player, medal)
         pokeball.setCollideWorldBounds(true);
         pokeball.setVelocity(Phaser.Math.Between(-150, 150), 150);
         pokeball.allowGravity = false;
+        
+        //  Add and update the level
+        level += 1;
+        levelText.setText('Level: ' + level);
 
     }
 }
