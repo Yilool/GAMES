@@ -38,10 +38,12 @@ var pokeballs;
 var superpokeballs;
 var platforms;
 var cursors;
+var deadText;   
 var score = 0;
 var scoreText;
 var level = 1;
 var levelText;
+var cautionText;
 var gameOver = false;
 var tecla;
 var audio;
@@ -195,7 +197,8 @@ function update ()
         superpokeball.setCollideWorldBounds(true);
         superpokeball.setVelocity(Phaser.Math.Between(-300, 300), 300);
         superpokeball.allowGravity = false;
-
+        
+        cautionText = this.add.text  (25, 550, 'BE CARE ¡¡SUPERPOKEBALL!!', { fontSize: '48px', fill: 'BLACK'});
     }
     else
     {
@@ -248,7 +251,8 @@ function hitpokeball (player, pokeball)
     if(!cursors.down.isDown)
     {
     audio1 = this.sound.play('audio1', false, 0, 1, 0, 0, true, 0);
-
+    deadText = this.add.text  (80,80, 'GAME OVER', { fontSize: '100px', fill: 'RED'});
+    
     console.log("entro en if");
     this.physics.pause();
 
