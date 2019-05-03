@@ -251,7 +251,6 @@ function hitpokeball (player, pokeball)
     if(!cursors.down.isDown)
     {
     audio1 = this.sound.play('audio1', false, 0, 1, 0, 0, true, 0);
-    deadText = this.add.text  (80,80, 'GAME OVER', { fontSize: '100px', fill: 'RED'});
     
     console.log("entro en if");
     this.physics.pause();
@@ -259,7 +258,9 @@ function hitpokeball (player, pokeball)
     player.setTint(0xff0000);
 
     player.anims.play('turn');
-
+    
+    deadText = this.add.text  (275,175, 'GAME OVER', { fontSize: '150px', fill: 'RED'});
+    
     gameOver = true;
 
     }
@@ -280,6 +281,8 @@ function hitsuperpokeball (player, superpokeball)
 
     player.anims.play('turn');
 
+    deadText = this.add.text  (275,175, 'GAME OVER', { fontSize: '150px', fill: 'RED'});
+    
     gameOver = true;
 
     }
